@@ -59,7 +59,7 @@ namespace StartVormDavidMyrseth
             pbox.Size = new Size(60, 60);
             pbox.Location = new Point(150, 130);
             pbox.SizeMode = PictureBoxSizeMode.Zoom;
-            pbox.Image = Image.FromFile(@"..\..\..\SpongeBob.png");
+            pbox.Image = Image.FromFile(@"..\..\..\Jesus.png");
             pbox.DoubleClick += Pbox_DoubleClick;
 
         }
@@ -127,8 +127,8 @@ namespace StartVormDavidMyrseth
                 //checkbox2
                 chk2 = new CheckBox();
                 chk2.Checked = false;
-                //chk2.Image = Image.FromFile(@"..\..\..\SpongeBob.png");
-                chk2.BackgroundImage = Image.FromFile(@"..\..\..\SpongeBob.png");
+                //chk2.Image = Image.FromFile(@"..\..\..\Jesus.png");
+                chk2.BackgroundImage = Image.FromFile(@"..\..\..\Jesus.png");
                 chk2.BackgroundImageLayout = ImageLayout.Zoom;
                 chk2.Size = new Size(100, 100);
                 chk2.Location = new Point(150, 270);
