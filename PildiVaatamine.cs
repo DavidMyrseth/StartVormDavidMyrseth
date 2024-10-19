@@ -1,14 +1,4 @@
-﻿﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace StartVormDavidMyrseth
+﻿namespace StartVormDavidMyrseth
 {
     public partial class PildiVaatamine : Form
     {
@@ -23,103 +13,99 @@ namespace StartVormDavidMyrseth
         Button close;
         ColorDialog colorDialog;
 
+
         public PildiVaatamine(int w, int h)
         {
             this.Width = w;
             this.Height = h;
-            this.Text = "Pildi vaatamise programm";
+            this.Text = "Pildi vaatamine";
 
+            // PictureBox
+            colorDialog = new ColorDialog();
             pbox = new PictureBox();
             pbox.Size = new Size(800, 500);
             pbox.Location = new Point(30, 30);
             pbox.SizeMode = PictureBoxSizeMode.Zoom;
             Controls.Add(pbox);
 
+            // Кнопка "Järgmine"
             JargmineBtn = new Button();
             JargmineBtn.Text = "Järgmine";
-            JargmineBtn.BackColor = Color.LightBlue; 
-            JargmineBtn.ForeColor = Color.Black; 
-            JargmineBtn.Font = new Font("Arial", 8, FontStyle.Bold); 
-            JargmineBtn.FlatStyle = FlatStyle.Flat; 
-            JargmineBtn.FlatAppearance.BorderSize = 0;
-            JargmineBtn.Size = new Size(65,20);
+            JargmineBtn.BackColor = Color.MediumSeaGreen;  // Заменен цвет
+            JargmineBtn.ForeColor = Color.White;
+            JargmineBtn.Font = new Font("Arial", 12, FontStyle.Bold);  // Увеличен шрифт
+            JargmineBtn.Size = new Size(120, 40);  // Увеличен размер
             JargmineBtn.Location = new Point(50, 550);
             JargmineBtn.Click += JrBtn_Click;
             Controls.Add(JargmineBtn);
 
+            // Кнопка "Eelmine"
             TagasiBtn = new Button();
             TagasiBtn.Text = "Eelmine";
-            TagasiBtn.BackColor = Color.LightBlue;
-            TagasiBtn.ForeColor = Color.Black;
-            TagasiBtn.Font = new Font("Arial", 8, FontStyle.Bold);
-            TagasiBtn.FlatStyle = FlatStyle.Flat;
-            TagasiBtn.FlatAppearance.BorderSize = 0;
-            TagasiBtn.Size = new Size(60, 20);
-            TagasiBtn.Location = new Point(115, 550);
+            TagasiBtn.BackColor = Color.MediumSeaGreen;  // Заменен цвет
+            TagasiBtn.ForeColor = Color.White;
+            TagasiBtn.Font = new Font("Arial", 12, FontStyle.Bold);
+            TagasiBtn.Size = new Size(120, 40);
+            TagasiBtn.Location = new Point(180, 550);  // Логичное размещение рядом
             TagasiBtn.Click += TgBtn_Click;
             Controls.Add(TagasiBtn);
 
+            // Чекбокс "Venitada"
             chkb = new CheckBox();
             chkb.Checked = false;
             chkb.Text = "Venitada";
             chkb.ForeColor = Color.Black;
-            chkb.Font = new Font("Arial", 8, FontStyle.Bold);
-            chkb.FlatStyle = FlatStyle.Flat;
-            chkb.FlatAppearance.BorderSize = 0;
-            chkb.Size = new Size(150, 60);
-            chkb.Location = new Point(50, 580);
+            chkb.Font = new Font("Arial", 12, FontStyle.Bold);  // Увеличен шрифт
+            chkb.Size = new Size(150, 40);
+            chkb.Location = new Point(320, 550);  // Перемещено для большего пространства
             chkb.CheckedChanged += Chk_CheckedChanged;
             Controls.Add(chkb);
 
+            // Кнопка "Näita"
             show = new Button();
             show.Text = "Näita";
-            show.BackColor = Color.LightBlue;
-            show.ForeColor = Color.Black;
-            show.Font = new Font("Arial", 8, FontStyle.Bold);
-            show.FlatStyle = FlatStyle.Flat;
-            show.FlatAppearance.BorderSize = 0;
-            show.Size = new Size(60, 20);
-            show.Location = new Point(380, 550);
+            show.BackColor = Color.MediumSeaGreen;
+            show.ForeColor = Color.White;
+            show.Font = new Font("Arial", 12, FontStyle.Bold);
+            show.Size = new Size(120, 40);
+            show.Location = new Point(500, 550);
             show.Click += Show_Click;
             Controls.Add(show);
 
-            colorDialog = new ColorDialog();
+            // Кнопка "Muuta taustavärvi"
             backgrn = new Button();
             backgrn.Text = "Muuta taustavärvi";
-            backgrn.BackColor = Color.LightBlue;
-            backgrn.ForeColor = Color.Black;
-            backgrn.Font = new Font("Arial", 8, FontStyle.Bold);
-            backgrn.FlatStyle = FlatStyle.Flat;
-            backgrn.FlatAppearance.BorderSize = 0;
-            backgrn.Size = new Size(60, 40);
-            backgrn.Location = new Point(445,550);
+            backgrn.BackColor = Color.MediumSeaGreen;
+            backgrn.ForeColor = Color.White;
+            backgrn.Font = new Font("Arial", 12, FontStyle.Bold);
+            backgrn.Size = new Size(200, 40);  // Увеличен размер для большего текста
+            backgrn.Location = new Point(640, 550);
             backgrn.Click += backGround_Click;
             Controls.Add(backgrn);
 
+            // Кнопка "Sulge pilt"
             close = new Button();
             close.Text = "Sulge pilt";
-            close.BackColor = Color.LightBlue;
-            close.ForeColor = Color.Black;
-            close.Font = new Font("Arial", 8, FontStyle.Bold);
-            close.FlatStyle = FlatStyle.Flat;
-            close.FlatAppearance.BorderSize = 0;
-            close.Size = new Size(60, 40);
-            close.Location = new Point(510, 550);
+            close.BackColor = Color.IndianRed;
+            close.ForeColor = Color.White;
+            close.Font = new Font("Arial", 12, FontStyle.Bold);
+            close.Size = new Size(120, 40);
+            close.Location = new Point(50, 600);  // Перемещено ниже
             close.Click += Close_Click;
             Controls.Add(close);
 
+            // Кнопка "Väljuda"
             exit = new Button();
             exit.Text = "Väljuda";
-            exit.BackColor = Color.LightBlue;
-            exit.ForeColor = Color.Black;
-            exit.Font = new Font("Arial", 8, FontStyle.Bold);
-            exit.FlatStyle = FlatStyle.Flat;
-            exit.FlatAppearance.BorderSize = 0;
-            exit.Size = new Size(60, 20);
-            exit.Location = new Point(575,550);
+            exit.BackColor = Color.IndianRed;
+            exit.ForeColor = Color.White;
+            exit.Font = new Font("Arial", 12, FontStyle.Bold);
+            exit.Size = new Size(120, 40);
+            exit.Location = new Point(180, 600);  // Логичное размещение рядом с "Sulge"
             exit.Click += Exit_Click;
             Controls.Add(exit);
         }
+
 
         private void Exit_Click(object sender, EventArgs e)
         {
@@ -131,7 +117,7 @@ namespace StartVormDavidMyrseth
             pbox.Image = null;
         }
 
-        private void backGround_Click(object sender, EventArgs e)
+        private void backGround_Click(object? sender, EventArgs e)
         {
             // Näita värvidialoogiboksi. Kui kasutaja klõpsab OK, siis muutke 
             // PictureBox juhtelemendi taust selle värviga, mille kasutaja valis.

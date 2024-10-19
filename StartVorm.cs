@@ -8,7 +8,7 @@ namespace StartVormDavidMyrseth
     {
         List<string> elemendid = new List<string> { "Nupp", "Silt", "Pilt", "Märkeruut", "radioNupp", "Tekstkast", "Loetelu", "Table", "Dialoogaknad","Mängid" };
         List<string> rbtn_list = new List<string> { "Üks", "Kaks", "Kolm" };
-        List<string> rbtn_list2 = new List<string> { "Pildi vaatamise programm", "Matemaatiline äraarvamismäng", "Sarnaste piltide leidmise mäng" };
+        List<string> rbtn_list2 = new List<string> { "Pildi vaatamine", "Matemaatiline mäng", "Piltide leidmise mäng" };
         TreeView tree;
         Button btn;
         Label lbl;
@@ -241,16 +241,17 @@ namespace StartVormDavidMyrseth
 
                 switch (selected)
                 {
-                    case "Pildi vaatamise programm":
+                    case "Pildi vaatamine":
                         PildiVaatamine pildiVaatamine = new PildiVaatamine(900, 700);
                         pildiVaatamine.Show();
                         break;
-                    case "Matemaatiline äraarvamismäng":
-                        Araarvamismang araarvamismang = new Araarvamismang(350, 400);
+                    case "Matemaatiline mäng":
+                        Araarvamismang araarvamismang = new Araarvamismang(500, 500);
                         araarvamismang.Show();
                         break;
-                    case "Sarnaste piltide leidmise mäng":
-
+                    case "Piltide leidmise mäng":
+                        PiltideLeidmise piltideLeidmise = new PiltideLeidmise(550, 550);
+                        piltideLeidmise.Show();
                         break;
                     default:
                         Console.WriteLine("Error");
