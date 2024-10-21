@@ -38,12 +38,12 @@
             this.Text = "Matemaatiline mäng";
 
             // Изменение шрифта для всех элементов
-            Font commonFont = new Font("Arial", 16, FontStyle.Bold);
+            Font commonFont = new Font("Arial", 12, FontStyle.Bold);
 
             // Время
             timeLabel = new Label();
-            timeLabel.Text = "Time Left: 30 seconds";
-            timeLabel.Location = new Point(120, 30); // Изменено для центрирования
+            timeLabel.Text = "Järelejäänud aeg: 30 sekundit";
+            timeLabel.Location = new Point(60, 60); // Изменено для центрирования
             timeLabel.Width = 300;
             timeLabel.Font = commonFont; // Применяем новый шрифт
             Controls.Add(timeLabel);
@@ -134,7 +134,7 @@
 
             // Стартовая кнопка
             startButton = new Button();
-            startButton.Text = "Start the quiz";
+            startButton.Text = "Viktoriini algus";
             startButton.Location = new Point(150, 300); // Центрирование
             startButton.Width = 150; // Широкая кнопка
             startButton.Height = 50; // Высота
@@ -159,7 +159,7 @@
         {
             score = 0;
             timeLeft = 30;
-            timeLabel.Text = "Time Left: 30 seconds";
+            timeLabel.Text = "Järelejäänud aeg: 30 sekundit";
             GenerNumbers();
             timer.Start();
         }
