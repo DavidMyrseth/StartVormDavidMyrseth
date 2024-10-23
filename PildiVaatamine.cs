@@ -1,4 +1,4 @@
-﻿namespace StartVormDavidMyrseth
+namespace StartVormDavidMyrseth
 {
     public partial class PildiVaatamine : Form
     {
@@ -13,15 +13,13 @@
         Button exit;
         Button backgrn;
         Button close;
-
-        // Новые кнопки
         Button resizeBtn;
         Button darkenBtn;
         Button saveBtn;
 
         ColorDialog colorDialog;
 
-        public PildiVaatamine(int w = 1200, int h = 800) // Изменяем размеры окна
+        public PildiVaatamine(int w = 1400, int h = 900) // Изменяем размеры окна
         {
             this.Width = w;
             this.Height = h;
@@ -46,7 +44,7 @@
             JargmineBtn.ForeColor = Color.White;
             JargmineBtn.Font = new Font("Arial", 12, FontStyle.Bold);
             JargmineBtn.Size = new Size(120, 40);
-            JargmineBtn.Location = new Point(50, 550);
+            JargmineBtn.Location = new Point(70, 550);
             JargmineBtn.Click += JrBtn_Click;
             Controls.Add(JargmineBtn);
 
@@ -57,7 +55,7 @@
             TagasiBtn.ForeColor = Color.White;
             TagasiBtn.Font = new Font("Arial", 12, FontStyle.Bold);
             TagasiBtn.Size = new Size(120, 40);
-            TagasiBtn.Location = new Point(180, 550);
+            TagasiBtn.Location = new Point(200, 550);
             TagasiBtn.Click += TgBtn_Click;
             Controls.Add(TagasiBtn);
 
@@ -67,8 +65,8 @@
             chkb.Text = "Venitada";
             chkb.ForeColor = Color.Black;
             chkb.Font = new Font("Arial", 12, FontStyle.Bold);
-            chkb.Size = new Size(150, 40);
-            chkb.Location = new Point(320, 550);
+            chkb.Size = new Size(120, 40);
+            chkb.Location = new Point(330, 550);
             chkb.CheckedChanged += Chk_CheckedChanged;
             Controls.Add(chkb);
 
@@ -79,7 +77,7 @@
             show.ForeColor = Color.White;
             show.Font = new Font("Arial", 12, FontStyle.Bold);
             show.Size = new Size(120, 40);
-            show.Location = new Point(500, 550);
+            show.Location = new Point(460, 550);
             show.Click += Show_Click;
             Controls.Add(show);
 
@@ -89,8 +87,8 @@
             backgrn.BackColor = Color.MediumSeaGreen;
             backgrn.ForeColor = Color.White;
             backgrn.Font = new Font("Arial", 12, FontStyle.Bold);
-            backgrn.Size = new Size(200, 40);
-            backgrn.Location = new Point(640, 550);
+            backgrn.Size = new Size(250, 40);
+            backgrn.Location = new Point(590, 550);
             backgrn.Click += backGround_Click;
             Controls.Add(backgrn);
 
@@ -101,62 +99,62 @@
             close.ForeColor = Color.White;
             close.Font = new Font("Arial", 12, FontStyle.Bold);
             close.Size = new Size(120, 40);
-            close.Location = new Point(50, 600);
+            close.Location = new Point(70, 600);
             close.Click += Close_Click;
             Controls.Add(close);
 
             // Кнопка "Väljuda"
             exit = new Button();
             exit.Text = "Väljuda";
-            exit.BackColor = Color.MediumSeaGreen;
+            exit.BackColor = Color.IndianRed;
             exit.ForeColor = Color.White;
             exit.Font = new Font("Arial", 12, FontStyle.Bold);
             exit.Size = new Size(120, 40);
-            exit.Location = new Point(180, 600);
+            exit.Location = new Point(200, 600);
             exit.Click += Exit_Click;
             Controls.Add(exit);
 
-            // Кнопка "Lisa Pilt" — стилизована как другие кнопки
+            // Кнопка "Lisa Pilt" 
             uploadBtn = new Button();
             uploadBtn.Text = "Lisa Pilt";
-            uploadBtn.BackColor = Color.MediumSeaGreen; // Стиль кнопки как у других
+            uploadBtn.BackColor = Color.MediumSeaGreen;
             uploadBtn.ForeColor = Color.White;
             uploadBtn.Font = new Font("Arial", 12, FontStyle.Bold);
             uploadBtn.Size = new Size(120, 40);
-            uploadBtn.Location = new Point(720, 600); // Переместили кнопку ниже остальных
+            uploadBtn.Location = new Point(720, 600); 
             uploadBtn.Click += UploadBtn_Click;
             Controls.Add(uploadBtn);
 
-            // Новая кнопка "Уменьшить картинку"
+            // Новая кнопка "Размыть картинку" 
             resizeBtn = new Button();
-            resizeBtn.Text = "Уменьшить";
+            resizeBtn.Text = "Hägustage pilt";
             resizeBtn.BackColor = Color.MediumSeaGreen;
             resizeBtn.ForeColor = Color.White;
             resizeBtn.Font = new Font("Arial", 12, FontStyle.Bold);
             resizeBtn.Size = new Size(120, 40);
-            resizeBtn.Location = new Point(50, 650);
+            resizeBtn.Location = new Point(330, 600);
             resizeBtn.Click += ResizeBtn_Click;
             Controls.Add(resizeBtn);
 
             // Новая кнопка "Затемнить картинку"
             darkenBtn = new Button();
-            darkenBtn.Text = "Затемнить";
+            darkenBtn.Text = "Tumendada pilti";
             darkenBtn.BackColor = Color.MediumSeaGreen;
             darkenBtn.ForeColor = Color.White;
             darkenBtn.Font = new Font("Arial", 12, FontStyle.Bold);
             darkenBtn.Size = new Size(120, 40);
-            darkenBtn.Location = new Point(200, 650);
+            darkenBtn.Location = new Point(460, 600);
             darkenBtn.Click += DarkenBtn_Click;
             Controls.Add(darkenBtn);
 
-            // Новая кнопка "Сохранить картинку"
+            // Новая кнопка "Сохранить"
             saveBtn = new Button();
-            saveBtn.Text = "Сохранить";
+            saveBtn.Text = "Salvestage pilt";
             saveBtn.BackColor = Color.MediumSeaGreen;
             saveBtn.ForeColor = Color.White;
             saveBtn.Font = new Font("Arial", 12, FontStyle.Bold);
             saveBtn.Size = new Size(120, 40);
-            saveBtn.Location = new Point(350, 650);
+            saveBtn.Location = new Point(590, 600);
             saveBtn.Click += SaveBtn_Click;
             Controls.Add(saveBtn);
         }
@@ -223,12 +221,12 @@
                 pbox.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
-        // Метод для уменьшения картинки
+        // Метод для размытие картинки Размыть
         private void ResizeBtn_Click(object? sender, EventArgs e)
         {
             if (pbox.Image != null)
             {
-                // Уменьшаем размер картинки до 80%
+                // Размывание картинки до 80%
                 var newWidth = (int)(pbox.Image.Width * 0.8);
                 var newHeight = (int)(pbox.Image.Height * 0.8);
                 var resizedImage = new Bitmap(pbox.Image, new Size(newWidth, newHeight));
@@ -236,7 +234,7 @@
             }
         }
 
-        // Метод для затемнения картинки
+        // Метод для затемнения картинки Затемнить 
         private void DarkenBtn_Click(object? sender, EventArgs e)
         {
             if (pbox.Image != null)
@@ -256,7 +254,7 @@
             }
         }
 
-        // Метод для сохранения картинки
+        // Метод для сохранения картинки Сохранить
         private void SaveBtn_Click(object? sender, EventArgs e)
         {
             if (pbox.Image != null)
