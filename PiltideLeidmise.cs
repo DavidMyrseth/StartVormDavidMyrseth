@@ -1,4 +1,4 @@
-﻿namespace StartVormDavidMyrseth
+namespace StartVormDavidMyrseth
 {
     public partial class PiltideLeidmise : Form
     {
