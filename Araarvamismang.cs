@@ -16,8 +16,8 @@ namespace StartVormDavidMyrseth
         Label dividedRightLabel;
         NumericUpDown sumDivide;
         Button startButton;
-        Button hintButton; // Кнопка подсказки
-        Button colorButton; // Кнопка смены цвета фона
+        Button hintButton;
+        Button colorButton;
         System.Windows.Forms.Timer timer;
         int timeLeft;
         Random rand = new Random();
@@ -40,9 +40,9 @@ namespace StartVormDavidMyrseth
 
         public Araarvamismang(int w, int h)
         {
-            this.Width = w;
-            this.Height = h;
-            this.Text = "Matemaatiline mäng";
+            this.Width = w > 150 ? w : 150;
+            this.Height = h > 600 ? h : 600; 
+            this.Text = "Piltide leidmine";
 
             // Изменение шрифта для всех элементов
             Font commonFont = new Font("Arial", 12, FontStyle.Bold);
